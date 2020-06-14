@@ -5,16 +5,24 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RestapiService {
-  baseUrl:string=" https://waqi.info/ ";
-  baseUrlc:string=" https://aqicn.org/city/chennai//velachery-res.-area/ ";
 
-  constructor(private httpClient:HttpClient) { }
+  baseUrl:string ="http://api.waqi.info/feed";
+  newUrl:string;
+  token:string ='d37805a8cce7d5d9040024032ae055791635a9f2'
 
-  public getTotal() {
+  
 
-    return this.httpClient.get(this.baseUrl);
+  constructor(private httpClient:HttpClient) {}
+   
+  public gettotal(){
+    //return this.httpClient.get(this.baseUrl);
   }
-  public getcountries(){
-    return this.httpClient.get(this.baseUrlc);
+
+  public getAirQuality(country:string)
+  {
+    this.newUrl = this.baseUrl+"/"+country+"/?token="+this.token;
+    console.log(this.newUrl);
+
+    return this.httpClient.get(this.newUrl);
   }
 }

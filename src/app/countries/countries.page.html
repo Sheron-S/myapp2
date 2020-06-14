@@ -6,15 +6,17 @@
 
 <ion-content>
   <ion-list>
+    <ion-item *ngFor ="let country of countrylist" >{{country.country}} <ion-button size ="default" color="primary" (click)='onclick(country.country)'>getdata</ion-button> </ion-item>
+    <!--
     <ion-item>
-      <ion-button size ="default" color="primary">India</ion-button>
+      <ion-button size ="default" color="primary" (click)='onclick(country_india)'>India</ion-button>
     </ion-item>
     <ion-item>
-      <ion-button size ="default" color="primary">United States</ion-button>
+      <ion-button size ="default" color="primary" (click)='onclick(country_us)'>United States</ion-button>
     </ion-item>
     <ion-item>
-      <ion-button size="default" color="primary">Australia</ion-button>
-    </ion-item>
+      <ion-button size="default" color="primary" >Australia</ion-button>
+    </ion-item> 
     <ion-item>
       <ion-button size="default" color="primary">Paris</ion-button>
     </ion-item>
@@ -33,6 +35,7 @@
     <ion-item>
       <ion-button size="default" color="primary">Seoul</ion-button>
     </ion-item>
+  -->
   </ion-list>
 
  

@@ -1,16 +1,39 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
+import {} from './../airquality/airquality.page'
 
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.page.html',
   styleUrls: ['./countries.page.scss'],
 })
-export class CountriesPage implements OnInit {
+export class CountriesPage  {
 
-  constructor() { }
+  countrylist =[ {"country":"india"},{"country":"austrlia"},{"country":"japan"},{"country":"auatrlia"}]
+  
+  country_india:string ="india";
+  constructor(public router:Router) {}
 
-  ngOnInit() {
+  ngonInit(){}
+
+  onclick(country:string)
+
+  {
+    console.log(country);
+    {
+    this.router.navigate(['airquality'] ,{queryParams : {Country : country || 'Default'}});
+    }
   }
-
+  
 }
+  
+  
+  
+
+   
+
+  
+
+ 
+
+

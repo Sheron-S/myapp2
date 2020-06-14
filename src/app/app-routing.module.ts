@@ -15,6 +15,12 @@ const routes: Routes = [
     path: 'countries',
     loadChildren: () => import('./countries/countries.module').then( m => m.CountriesPageModule)
   },
+  
+  
+  {
+    path: 'airquality',
+    loadChildren: () => import('./airquality/airquality.module').then( m => m.AirqualityPageModule)
+  },
 ];
 
 @NgModule({
