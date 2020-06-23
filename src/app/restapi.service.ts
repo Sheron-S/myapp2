@@ -25,4 +25,6 @@ export class RestapiService {
 
     return this.httpClient.get(this.newUrl);
   }
+
+
 }

@@ -5,8 +5,11 @@
 </ion-header>
 
 <ion-content>
+  
   <ion-list>
-    <ion-item *ngFor ="let country of countrylist" >{{country.country}} <ion-button size ="default" color="primary" (click)='onclick(country.country)'>getdata</ion-button> </ion-item>
+    <ion-item *ngFor ="let country of countrylist" >{{country.country}} <ion-fab><ion-fab-button size= 'default' (click)='onclick(country.country)'color="primary"><strong>{{country.country}}    </strong></ion-fab-button></ion-fab>
+       
+    </ion-item>
     <!--
     <ion-item>
       <ion-button size ="default" color="primary" (click)='onclick(country_india)'>India</ion-button>

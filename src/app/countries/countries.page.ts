@@ -9,11 +9,11 @@ import {} from './../airquality/airquality.page'
 })
 export class CountriesPage  {
 
-  countrylist =[ {"country":"india"},{"country":"austrlia"},{"country":"japan"},{"country":"auatrlia"}]
+  dataloading: boolean;
+  countrylist =[ {"country":"india"},{"country":"australia"},{"country":"japan"},{"country":"us"},{"country":"paris"},{"country":"singapore"},{"country":"canada"}]
   
-  country_india:string ="india";
+  /*country_india:string ="india";*/
   constructor(public router:Router) {}
-
   ngonInit(){}
 
   onclick(country:string)
@@ -23,9 +23,12 @@ export class CountriesPage  {
     {
     this.router.navigate(['airquality'] ,{queryParams : {Country : country || 'Default'}});
     }
+
   }
-  
 }
+
+
+
   
   
   
