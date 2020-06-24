@@ -1,18 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title> LOGIN </ion-title>
+<ion-header >
+  <ion-toolbar >
+    <ion-title style="text-align: center; " > LOGIN </ion-title>
   </ion-toolbar>
 </ion-header>
  
-<ion-content>
+<ion-content >
 
   <form  #form="ngForm" (ngSubmit)="login()"  >
     <div padding> 
-    <ion-item>
+    <ion-item style="text-align: center; ">
       <ion-label position="floating">Username</ion-label>
       <ion-input position="floating" name="userid" [(ngModel)]="userid" type="text" placeholder="Enter User ID" ngModel required></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item style="text-align: center; ">
       <ion-label position="floating">Password</ion-label>
       <ion-input position="floating" name="password" [(ngModel)]="password" type="password" placeholder="Enter Password" ngModel required></ion-input>
     </ion-item>

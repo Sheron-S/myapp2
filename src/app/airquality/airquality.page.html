@@ -1,13 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>airquality</ion-title>
+<ion-header >
+  <ion-toolbar style="color:mediumslateblue">
+    <ion-back-button slot ="start" defaultHref="countries"></ion-back-button>
+    <ion-title  >{{country}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-item  ><ion-fab><ion-fab-button size= 'default' color="secondary shade"><strong> airqualityvalue: {{aqi.aqi}}  </strong></ion-fab-button></ion-fab>
-       
-  </ion-item>
-  <!--<ion-item><ion-label>airqualityvalue: {{aqi.aqi}}</ion-label></ion-item>-->
   
+  <div *ngIf="dataloading">
+    <ion-label>Loading data</ion-label>
+  </div>
+  <div *ngIf="!dataloading"> 
+    <ion-item ><ion-fab><ion-fab-button size= 'default' color="danger"><strong>value:{{aqi.aqi}} </strong></ion-fab-button></ion-fab>
+       
+    </ion-item>
+ 
+  
+  </div>
 </ion-content>
+

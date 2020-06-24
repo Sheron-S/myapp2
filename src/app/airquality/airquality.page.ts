@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestapiService } from '../restapi.service';
 import { ActivatedRoute, Router} from '@angular/router'
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-airquality',
   templateUrl: './airquality.page.html',
@@ -10,43 +11,38 @@ export class AirqualityPage implements OnInit {
 
   results:any[];
   aqi;
+  dataloading = false;
   country:string;
 
 
-  constructor( public route:Router,private actRoute:ActivatedRoute, public restApi:RestapiService) {
+  constructor( public route:Router,private actRoute:ActivatedRoute, public loadingController: LoadingController,public restApi:RestapiService) {
     
     this.actRoute.queryParams.subscribe(params => {
 
       console.log(params);
       this.country = params['Country'];
       console.log(this.country);
-      console.log("Before calling rest service"+this.country);
-
-
-      
-
-      /*this.results = response['results'];
-      console.log(this.results);
-      console.log(this.results[0].parameters);
-      console.log(this.results[0].value);
-      console.log(this.results[0].unit);*/
-
+      this.getAirQuality();
     })
-    
     
    }
 
   ngOnInit() {
 
-      this.restApi.getAirQuality(this.country).subscribe((response)=>{
-      console.log(response);
-    
+  }
+  getAirQuality()
+  {
+    this.dataloading = true;
+    this.restApi.getAirQuality(this.country).then(response => {
       const data = JSON.stringify(response);
-      const jsdt  = JSON.parse(data);
+      const jsdt = JSON.parse(data);
       console.log(jsdt);
       this.aqi = jsdt['data'];
-      console.log(this.aqi);
-  });
-}
+     this.dataloading = false;
+    });
+
+  }
+
+  
 
 }

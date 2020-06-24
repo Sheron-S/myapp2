@@ -10,7 +10,7 @@ import {} from './../airquality/airquality.page'
 export class CountriesPage  {
 
   dataloading: boolean;
-  countrylist =[ {"country":"india"},{"country":"australia"},{"country":"japan"},{"country":"us"},{"country":"paris"},{"country":"singapore"},{"country":"canada"}]
+  countrylist =[ {"country":"INDIA"},{"country":"AUSTRALIA"},{"country":"CHINA"},{"country":"LONDON"},{"country":"PARIS"},{"country":"SINGAPORE"},{"country":"CANADA"}]
   
   /*country_india:string ="india";*/
   constructor(public router:Router) {}
